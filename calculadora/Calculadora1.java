@@ -4,56 +4,38 @@
  */
 package com.mycompany.calculadora;
 
-/**
- *
- * @author espe
- */
 public class Calculadora1 {
-    //atributos
-    private int operando1;
-    private int operando2;
-    //constructores
-    public Calculadora1(){
-        
-    }
-    public Calculadora1(int operando1, int operando2){
-        this.operando1=operando1;
-        this.operando2 = operando2;
-        
-    }
-    //metodos 
-    public int sumar(){
-        int suma=this.operando1+this.operando2;
-        return suma;
-    }
-    public int restar(){
-        int resta=this.operando1-this.operando2;
-        return resta;
-
-    }
-     public int multiplicar(){
-        int multiplicar=this.operando1*this.operando2;
-        return multiplicar;
-    }
-      public double dividir(){
-        double dividir=(double)this.operando1/(double)this.operando2;
-        return dividir;
+    public double sumar(double n1, double n2) {
+        return n1 + n2;
     }
 
-    public void setOperando1(int operando1) {
-        this.operando1 = operando1;
+    public double restar(double n1, double n2) {
+        return n1 - n2;
     }
 
-    public void setOperando2(int operando2) {
-        this.operando2 = operando2;
+    public double multiplicar(double n1, double n2) {
+        return n1 * n2;
     }
 
-    public int getOperando1() {
-        return operando1;
+    public double dividir(double n1, double n2) {
+        if (n2 != 0) {
+            return n1 / n2;
+        } else {
+            System.out.println("Error: división por cero.");
+            return 0;
+        }
     }
 
-    public int getOperando2() {
-        return operando2;
+    public double potencia(double base, double exponente) {
+        return Math.pow(base, exponente);
     }
-      
+
+    public double raizCuadrada(double numero) {
+        if (numero >= 0) {
+            return Math.sqrt(numero);
+        } else {
+            System.out.println("Error: no se puede calcular la raíz cuadrada de un número negativo.");
+            return 0;
+        }
+    }
 }
