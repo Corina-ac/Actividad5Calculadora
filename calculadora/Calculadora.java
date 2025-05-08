@@ -6,31 +6,75 @@ package com.mycompany.calculadora;
 
 import java.util.Scanner;
 
-/**
- *
- * @author espe
- */
 public class Calculadora {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Calculadora1 calc = new Calculadora1();
+        double n1, n2;
+        int opcion;
 
-        // Pedir al usuario los valores
-        System.out.print("Ingrese el primer número (operando1): ");
-        int operando1 = scanner.nextInt();
+        do {
+            System.out.println("\n=== CALCULADORA EN JAVA ===");
+            System.out.println("1: SUMAR");
+            System.out.println("2: RESTAR");
+            System.out.println("3: MULTIPLICAR");
+            System.out.println("4: DIVIDIR");
+            System.out.println("5: POTENCIA");
+            System.out.println("6: RAÍZ CUADRADA");
+            System.out.println("7: SALIR");
+            System.out.print("INGRESE UNA OPCIÓN: ");
+            opcion = scanner.nextInt();
 
-        System.out.print("Ingrese el segundo número (operando2): ");
-        int operando2 = scanner.nextInt();
-
-        // Crear la calculadora con los valores ingresados
-        Calculadora1 miCalculadora = new Calculadora1(operando1, operando2);
-
-        // Mostrar resultados
-        System.out.println("La suma es: " + miCalculadora.sumar());
-        System.out.println("La resta es: " + miCalculadora.restar());
-        System.out.println("La multiplicación es: " + miCalculadora.multiplicar());
-        System.out.println("La división es: " + miCalculadora.dividir());
-
-        scanner.close();
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese el primer número: ");
+                    n1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    n2 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.sumar(n1, n2));
+                    break;
+                case 2:
+                    System.out.print("Ingrese el primer número: ");
+                    n1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    n2 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.restar(n1, n2));
+                    break;
+                case 3:
+                    System.out.print("Ingrese el primer número: ");
+                    n1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    n2 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.multiplicar(n1, n2));
+                    break;
+                case 4:
+                    System.out.print("Ingrese el primer número: ");
+                    n1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    n2 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.dividir(n1, n2));
+                    break;
+                case 5:
+                    System.out.print("Ingrese la base: ");
+                    n1 = scanner.nextDouble();
+                    System.out.print("Ingrese el exponente: ");
+                    n2 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.potencia(n1, n2));
+                    break;
+                case 6:
+                    System.out.print("Ingrese el número: ");
+                    n1 = scanner.nextDouble();
+                    System.out.println("RESULTADO: " + calc.raizCuadrada(n1));
+                    break;
+                case 7:
+                    System.out.println("SALIENDO...");
+                    break;
+                default:
+                    System.out.println("OPCIÓN INVÁLIDA");
+                    break;
+            }
+        } while (opcion != 7);
     }
 }
+
+
